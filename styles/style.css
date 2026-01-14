@@ -352,10 +352,11 @@ nav {
 }
 
 /* Footer (Global) */
+/* Footer (Global) */
 footer {
     background: var(--white);
-    padding: 60px 0 30px;
-    margin-top: 50px;
+    padding: 30px 0 20px;
+    margin-top: 30px;
     border-top: 1px solid #eee;
 }
 
@@ -435,7 +436,7 @@ footer {
 
 /* CTA Section */
 .cta-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: linear-gradient(135deg, var(--primary) 0%, #ff758c 100%);
     color: white;
     text-align: center;

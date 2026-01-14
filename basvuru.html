@@ -384,25 +384,62 @@
                     <h2 style="margin: 40px 0 30px; font-size: 1.8rem;">Eğitim Tercihleri</h2>
 
                     <div class="form-group">
-                        <label class="form-label">Hangi eğitime katılmak istersiniz?</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" id="beginner" name="course" value="beginner" checked>
-                                <label for="beginner">
-                                    <ion-icon name="shapes"></ion-icon> Başlangıç Seviyesi
-                                </label>
+                        <label class="form-label" style="margin-bottom: 20px;">Hangi eğitime katılmak
+                            istersiniz?</label>
+
+                        <div class="grid" style="margin-top: 0; gap: 30px;">
+                            <!-- Standard Courses -->
+                            <div>
+                                <h4
+                                    style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                                    Temel Eğitimler</h4>
+                                <div class="radio-group" style="flex-direction: column; gap: 12px;">
+                                    <div class="radio-option">
+                                        <input type="radio" id="beginner" name="course" value="beginner" checked>
+                                        <label for="beginner">
+                                            <ion-icon name="shapes"></ion-icon> Başlangıç Seviyesi
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="intermediate" name="course" value="intermediate">
+                                        <label for="intermediate">
+                                            <ion-icon name="happy"></ion-icon> Orta Seviye
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="advanced" name="course" value="advanced">
+                                        <label for="advanced">
+                                            <ion-icon name="color-palette"></ion-icon> İleri Seviye
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="radio-option">
-                                <input type="radio" id="intermediate" name="course" value="intermediate">
-                                <label for="intermediate">
-                                    <ion-icon name="happy"></ion-icon> Orta Seviye
-                                </label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" id="advanced" name="course" value="advanced">
-                                <label for="advanced">
-                                    <ion-icon name="color-palette"></ion-icon> İleri Seviye
-                                </label>
+
+                            <!-- Workshops -->
+                            <div>
+                                <h4
+                                    style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                                    Workshoplar</h4>
+                                <div class="radio-group" style="flex-direction: column; gap: 12px;">
+                                    <div class="radio-option">
+                                        <input type="radio" id="workshop1" name="course" value="workshop_1">
+                                        <label for="workshop1">
+                                            <ion-icon name="star-outline"></ion-icon> Workshop 1 (Orta Seviye)
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="workshop2" name="course" value="workshop_2">
+                                        <label for="workshop2">
+                                            <ion-icon name="star-half"></ion-icon> Workshop 2 (Kompleks I)
+                                        </label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="workshop3" name="course" value="workshop_3">
+                                        <label for="workshop3">
+                                            <ion-icon name="star"></ion-icon> Workshop 3 (Kompleks II)
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

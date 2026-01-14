@@ -122,6 +122,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 30px;
+
     list-style: none;
 }
 
@@ -135,7 +136,6 @@ nav {
     color: var(--primary);
 }
 
-/* Hero Section */
 /* Hero Section */
 .hero {
     position: relative;
@@ -188,6 +188,14 @@ nav {
     max-width: 600px;
 }
 
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
 /* Compact Level Cards */
 .compact-level-card {
     background: white;
@@ -195,40 +203,79 @@ nav {
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .compact-level-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--secondary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 139, 167, 0.2);
+    border-color: rgba(255, 139, 167, 0.3);
 }
 
 .compact-image {
-    height: 180px;
+    height: 220px;
     width: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.compact-level-card:hover .compact-image {
+    transform: scale(1.05);
 }
 
 .compact-body {
-    padding: 25px;
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .compact-body h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
 }
 
 .compact-tag {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     font-weight: 800;
     color: var(--primary);
-    margin-bottom: 10px;
-    display: block;
+    margin-bottom: 15px;
+    display: inline-block;
+    background: rgba(255, 139, 167, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.compact-body p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    /* Pushes button down */
+}
+
+/* Text Button with Arrow Animation */
+.btn-text {
+    font-weight: 700;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.btn-text:hover {
+    gap: 12px;
+    color: var(--text-dark);
 }
 
 /* Decorative Circles (Global) */
@@ -341,6 +388,92 @@ footer {
 .footer-brand-btn:hover {
     background: var(--primary);
     color: white;
+}
+
+/* Resource Cards */
+.resource-section {
+    padding: 80px 0;
+    background: #fdfdfd;
+    border-top: 1px solid #eee;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.resource-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    background: rgba(255, 139, 167, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.resource-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.resource-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, #ff758c 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    color: var(--primary);
 }
 
 /* Helper Classes */

@@ -119,8 +119,9 @@
     <section id="levels" style="padding: 80px 0;">
         <div class="container">
             <div class="section-title">
-                <h2>Eğitim Programları</h2>
-                <p>Seviyenize uygun eğitimi seçin ve hemen başlayın.</p>
+                <h2>Eğitim Yolculuğunuzu Seçin</h2>
+                <p>İster sıfırdan başlayın, ister mevcut becerilerinizi profesyonel seviyeye taşıyın. Sizin için doğru
+                    planı keşfedin.</p>
             </div>
 
             <div class="grid">
@@ -130,13 +131,13 @@
                     <div class="compact-body">
                         <span class="compact-tag">Başlangıç Seviyesi</span>
                         <h3>Temel Formlar & Analiz</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
-                            Sık iğneden fazlası. Geometrik formların mantığını ve amiguruminin alfabesini öğrenerek
-                            sağlam bir temel atın.
+                        <p>
+                            Amigurumi dünyasına güçlü bir giriş yapın. Sık iğneden başlayarak geometrik formların
+                            mantığını çözün ve kendi basit karakterlerinizi tasarlamanın keyfini yaşayın.
                         </p>
                         <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'beginner')"
                             class="btn-text">
-                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                            Eğitimi İncele <ion-icon name="arrow-forward"></ion-icon>
                         </a>
                     </div>
                 </div>
@@ -146,14 +147,14 @@
                     <img src="assets/intermediate.jpg" alt="Orta" class="compact-image">
                     <div class="compact-body">
                         <span class="compact-tag">Orta Seviye</span>
-                        <h3>İfade & Modifikasyon</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
-                            Oyuncaklara ruh üfleyin. Yüz şekillendirme, ifade verme ve vücut oranları ile
-                            karakterlerinizi canlandırın.
+                        <h3>İfade & Karakterizasyon</h3>
+                        <p>
+                            Oyuncağınıza kişilik kazandırın. Detaylı yüz şekillendirme, vücut oranları ve ifade
+                            teknikleri ile karakterlerinizi "canlı" hissettirecek dokunuşları öğrenin.
                         </p>
                         <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'intermediate')"
                             class="btn-text">
-                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                            Eğitimi İncele <ion-icon name="arrow-forward"></ion-icon>
                         </a>
                     </div>
                 </div>
@@ -163,18 +164,84 @@
                     <img src="assets/advanced.jpg" alt="İleri" class="compact-image">
                     <div class="compact-body">
                         <span class="compact-tag">İleri Seviye</span>
-                        <h3>Özgün Tasarım</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
-                            Sınırları kaldırın. Karmaşık formlar tasarlayın, kendi koleksiyonunuzu oluşturun ve marka
-                            yolculuğunuza başlayın.
+                        <h3>Profesyonel Tasarım & Marka</h3>
+                        <p>
+                            Kendi imza tarzınızı yaratın. Karmaşık anatomik yapılar, eklem sistemleri ve tarif yazım
+                            teknikleri ile hobinizi profesyonel bir markaya dönüştürün.
                         </p>
                         <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'advanced')"
                             class="btn-text">
-                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                            Eğitimi İncele <ion-icon name="arrow-forward"></ion-icon>
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resource-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Öğrenci Kaynakları</h2>
+                <p>Eğitiminiz boyunca ihtiyaç duyacağınız temel rehberler elinizin altında.</p>
+            </div>
+
+            <div class="grid" style="margin-top: 30px;">
+                <!-- Malzemeler -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <ion-icon name="basket-outline"></ion-icon>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Malzeme Rehberi</h3>
+                        <p>
+                            Doğru ip, tığ ve yardımcı malzeme seçimi, projenizin kalitesini belirler. Marka
+                            karşılaştırmaları ve teknik detaylar için rehberimizi inceleyin.
+                        </p>
+                        <a href="malzemeler.html" class="btn-text">
+                            Rehbere Git <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terimler -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Teknik Sözlük</h3>
+                        <p>
+                            Uluslararası tarifleri okumayı öğrenin. İngilizce-Türkçe terimler sözlüğü ve kısaltmaların
+                            anlamları ile dil bariyerine takılmayın.
+                        </p>
+                        <a href="terimler.html" class="btn-text">
+                            Sözlüğe Bak <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="circle c1" style="background:white; opacity:0.1; width:400px; height:400px; top:-50px; left:-50px;">
+        </div>
+        <div class="circle c2"
+            style="background:white; opacity:0.1; width:300px; height:300px; bottom:-30px; right:50px;"></div>
+
+        <div class="container cta-content">
+            <h2>Tasarım Yolculuğuna Bugün Başla</h2>
+            <p>
+                Sadece bir hobi edinmekle kalma, hayal gücünü somutlaştıracak bir yetenek kazan.
+                Sınırlı kontenjan ile açılan sınıflarda yerini ayırt.
+            </p>
+            <a href="basvuru.html" class="btn btn-white">
+                Hemen Başvur <ion-icon name="arrow-forward-outline"
+                    style="vertical-align: middle; margin-left: 5px;"></ion-icon>
+            </a>
         </div>
     </section>
 

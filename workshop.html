@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshoplar - Amigurumi Tasarım Eğitimi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .workshop-hero {
+            background: linear-gradient(135deg, #fff0f5 0%, #fff 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .workshop-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .workshop-intro p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            text-align: left;
+            border-left: 5px solid var(--primary);
+        }
+
+        /* --- Accordion Styles --- */
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #fafafa;
+        }
+
+        .accordion-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+            /* Arbitrary large height */
+            border-top-color: #eee;
+            transition: max-height 0.8s ease-in;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            padding: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .badge-medium {
+            background: #E0F7FA;
+            color: #006064;
+        }
+
+        .badge-complex {
+            background: #F3E5F5;
+            color: #4A148C;
+        }
+
+        .badge-advanced {
+            background: #FCE4EC;
+            color: #880E4F;
+        }
+
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .workshop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .flow-list {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .flow-list li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .flow-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--secondary);
+        }
+
+        .workshop-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .benefits-card {
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .benefits-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-list ion-icon {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Elisleme Akademi">
+                    </a>
+                </div>
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="temel-egitim.html">Temel Eğitim</a></li>
+                    <li><a href="workshop.html" class="active">Workshoplar</a></li>
+                    <li><a href="malzemeler.html">Malzemeler</a></li>
+                    <li><a href="terimler.html">Terimler</a></li>
+                    <li><a href="basvuru.html">Başvuru</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="workshop-hero">
+        <div class="container">
+            <span class="level-tag">UYGULAMALI ATÖLYELER</span>
+            <h1>Amigurumi Tasarım Workshopları</h1>
+        </div>
+    </div>
+
+    <section style="padding-bottom: 10px;">
+        <div class="container">
+
+            <div class="workshop-intro">
+                <div class="info-box">
+                    <h3>Workshop Bölümü Hakkında</h3>
+                    <p style="margin-bottom: 10px;">Bu workshoplar, temel eğitimden farklı olarak tasarlanmıştır. Amaç;
+                        yeni teknik öğretmekten ziyade, <strong>tarif (reçete) okuma, anlama ve uygulama
+                            becerisini</strong> derinleştirmektir.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
+                    <div>
+                        <h4 style="margin-bottom: 10px; color: var(--text-dark);">Kimler Katılabilir?</h4>
+                        <ul class="flow-list">
+                            <li>En az Başlangıç Seviye Eğitimini tamamlayanlar</li>
+                            <li>Temel amigurumi tekniklerini bilenler</li>
+                            <li>Tarifleri daha bilinçli okumak isteyenler</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 10px; color: var(--text-dark);">Genel Yapı</h4>
+                        <ul class="flow-list">
+                            <li>📌 Tüm workshoplar yazılı tarif üzerinden ilerler</li>
+                            <li>📌 Tarif okuma teknikleri merkeze alınır</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion -->
+            <div class="accordion">
+
+                <!-- Workshop 1 -->
+                <div class="accordion-item active"> <!-- Open by default -->
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-title">
+                            🧶 WORKSHOP 1 – ORTA SEVİYE MODEL
+                            <span class="badge badge-medium">Orta Seviye</span>
+                        </div>
+                        <ion-icon name="chevron-down-outline" class="accordion-icon"></ion-icon>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="workshop-grid" style="grid-template-columns: 1fr;">
+                                <div>
+                                    <div class="section-title">Model ve Amaç</div>
+                                    <p style="margin-bottom: 25px;">**Model:** Sevimli Ayıcık (Başlangıçtan Sona)</p>
+                                    <p>Bu workshopta, aşağıda gördüğünüz ayıcık modelini sıfırdan oluşturacağız.
+                                        Amacımız sadece örmek değil, <strong>parça bütünlüğü, simetri ve tarif okuma
+                                            mantığını</strong> kavramaktır.</p>
+
+                                    <!-- Step by Step Timeline -->
+                                    <div class="steps-container" style="margin-top: 40px;">
+
+                                        <!-- Step 1 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_1_step1_start.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Başlangıç">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 1: Hazırlık
+                                                    ve Kafa Örümü</h4>
+                                                <p>Tarifteki "Sihirli Halka (SH)" ve artırma (V) terimlerini okuyarak
+                                                    başlıyoruz. İlmek işaretleyicinin (stitch marker) önemini ve spiral
+                                                    örme mantığını pratikte uyguluyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 2 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_1_step2_parts.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Parçalar">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 2:
+                                                    Parçaların Tamamlanması</h4>
+                                                <p>Kafa, gövde, kol ve bacaklar ayrı ayrı örülür. Bu aşamada elyaf
+                                                    doldurma oranını ve parçaların formunu korumayı öğreniyoruz. Atkı
+                                                    gibi aksesuarlar da bu aşamada hazırlanır.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 3 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_1_step3_sewing.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Dikiş">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 3:
+                                                    Birleştirme (Dikiş)</h4>
+                                                <p>En kritik aşama! Parçaları simetrik olarak gövdeye iğneliyoruz.
+                                                    "Gizli dikiş" tekniği ile ek yerleri belli olmadan uzuvları gövdeye
+                                                    sabitliyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 4 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_1_step4_face.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Yüz İşleme">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 4: Yüz
+                                                    İfadesi ve Son Dokunuşlar</h4>
+                                                <p>Oyuncaya asıl karakterini veren yüz işlemesidir. Gözlerin konumu,
+                                                    burun işlemesi ve atkısının takılması ile modelimizi tamamlıyoruz.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 5 (Final) -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+                                            <div class="step-img" style="max-width: 500px;">
+                                                <img src="assets/workshop_1_bear_bunny.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
+                                                    alt="Final">
+                                            </div>
+                                            <div class="step-content" style="max-width: 600px;">
+                                                <h4
+                                                    style="color: var(--primary); margin-bottom: 10px; font-size: 1.5rem;">
+                                                    MUTLU SON!</h4>
+                                                <p>Workshop sonunda elinizde kendi ördüğünüz, teknik olarak kusursuz bir
+                                                    ayıcık olacak. Tebrikler!</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="benefits-card" style="max-width: 800px; margin: 0 auto;">
+                                        <h4 style="margin-bottom: 10px;">Kazanımlar</h4>
+                                        <ul class="benefits-list" style="list-style: none;">
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Orta seviye tarifleri
+                                                rahatça okuyabilme</li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Parça mantığını anlama
+                                            </li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Tariften örme özgüveni
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workshop 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-title">
+                            🧶 WORKSHOP 2 – KOMPLEKS MODEL I
+                            <span class="badge badge-complex">Orta-İleri</span>
+                        </div>
+                        <ion-icon name="chevron-down-outline" class="accordion-icon"></ion-icon>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="workshop-grid" style="grid-template-columns: 1fr;">
+                                <div>
+                                    <div class="section-title">Model ve Amaç</div>
+                                    <p style="margin-bottom: 25px;">**Model:** Amigurumi Bebek (Detaylı Tasarım)</p>
+                                    <p>Bu ileri seviye workshopta, insan anatomisine uygun bir bebek modelleyeceğiz.
+                                        <strong>Gövde bütünlüğü, saç ekimi ve giysi tasarımı</strong> gibi teknik
+                                        detaylara odaklanacağız.
+                                    </p>
+
+                                    <!-- Step by Step Timeline -->
+                                    <div class="steps-container" style="margin-top: 40px;">
+
+                                        <!-- Step 1 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_2_step1_body.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Gövde Yapısı">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 1: Gövde ve
+                                                    Uzuv Anatomisi</h4>
+                                                <p>Bacaklardan başlayarak gövdeyi tek parça halinde çıkıyoruz (joinsiz
+                                                    örgü). Kolların ekleneceği yerleri ve boyun desteğini anatomik
+                                                    oranlara göre ayarlıyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 2 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_2_step2_hair.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Saç Ekimi">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 2: Saç
+                                                    Ekimi ve Şekillendirme</h4>
+                                                <p>Peruk başlığı (wig cap) hazırlama ve tek tek saç teli ekleme
+                                                    tekniklerini öğreniyoruz. Bebeğin karakterine uygun saç stili ve
+                                                    perçem tasarımı yapıyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 3 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_2_step3_shoes.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Ayakkabı Detayı">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 3: Aksesuar
+                                                    ve Ayakkabılar</h4>
+                                                <p>Bebeğin ayakta dengede durabilmesi için taban yapısı önemlidir.
+                                                    Ayakkabı örümü ve bağcık detaylarını çalışarak modelin duruşunu
+                                                    sağlamlaştırıyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 4 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_2_step4_dress.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Elbise Tasarımı">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 4: Elbise
+                                                    Tasarımı ve Giydirme</h4>
+                                                <p>Bebek bedenine "tam oturan" bir elbise tasarlıyoruz. Roba ayrımı,
+                                                    etek pileleri ve düğme detaylarını işleyerek giysiyi tamamlıyoruz.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 5 (Final) -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+                                            <div class="step-img" style="max-width: 500px;">
+                                                <img src="assets/workshop_2_doll_dress.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
+                                                    alt="Final Bebek">
+                                            </div>
+                                            <div class="step-content" style="max-width: 600px;">
+                                                <h4
+                                                    style="color: var(--primary); margin-bottom: 10px; font-size: 1.5rem;">
+                                                    MUHTEŞEM SONUÇ!</h4>
+                                                <p>Tüm parçaların birleşimiyle ortaya çıkan, orantılı ve şık bir
+                                                    amigurumi bebek. İleri seviye teknikleri başarıyla uyguladınız.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="benefits-card" style="max-width: 800px; margin: 0 auto;">
+                                        <h4 style="margin-bottom: 10px;">Kazanımlar</h4>
+                                        <ul class="benefits-list" style="list-style: none;">
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Bebek modellerinde oran
+                                                bilgisi</li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Giysi içeren tarifleri
+                                                okuma</li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Kompleks yapıyı parçalara
+                                                ayırabilme</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workshop 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-title">
+                            🧶 WORKSHOP 3 – KOMPLEKS MODEL II
+                            <span class="badge badge-advanced">İleri Seviye</span>
+                        </div>
+                        <ion-icon name="chevron-down-outline" class="accordion-icon"></ion-icon>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="workshop-grid" style="grid-template-columns: 1fr;">
+                                <div>
+                                    <div class="section-title">Model ve Amaç</div>
+                                    <p style="margin-bottom: 25px;">**Model:** Tasarım ve Modifikasyon (Çifte Bebek)</p>
+                                    <p>Bu en ileri seviye workshopta, aynı taban (body) üzerinde nasıl iki tamamen
+                                        farklı karakter yaratılabileceğini görüyoruz. <strong>Modifikasyon, kıyafet
+                                            tasarımı ve stilizasyon</strong> üzerine yoğunlaşıyoruz.</p>
+
+                                    <!-- Step by Step Timeline -->
+                                    <div class="steps-container" style="margin-top: 40px;">
+
+                                        <!-- Step 1 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_3_step1_base_duo.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Taban Yapısı">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 1: Standart
+                                                    Taban Oluşturma</h4>
+                                                <p>İki farklı bebek için aynı anatomik "baz" gövdeyi örüyoruz. Bu
+                                                    aşamada, tek bir tarifin nasıl çoğaltılabileceğini ve standart
+                                                    ölçülerin önemini kavrıyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 2 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_3_step2_socks_shoes.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Detaylar">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 2: İnce
+                                                    Detaylar (Çorap ve Ayakkabı)</h4>
+                                                <p>Karakter farkı detaylarda gizlidir! Bir bebeğe spor, diğerine klasik
+                                                    ayakkabı/çorap örerek aynı bacak yapısında farklı stiller
+                                                    oluşturmayı öğreniyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 3 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_3_step3_dress_variations.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Elbise Varyasyonları">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 3: Elbise
+                                                    Varyasyonları</h4>
+                                                <p>Aynı beden için iki farklı tarif yazıyoruz. Biri fırfırlı ve kabarık,
+                                                    diğeri düz ve modern kesim. Şema okuma ve kendi modelini uyarlama
+                                                    teknikleri burada devreye giriyor.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 4 -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: start; flex-direction: row-reverse;">
+                                            <div class="step-img" style="flex: 1; max-width: 300px;">
+                                                <img src="assets/workshop_3_step4_hair_styling.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                                    alt="Saç Stili">
+                                            </div>
+                                            <div class="step-content" style="flex: 2;">
+                                                <h4 style="color: var(--primary); margin-bottom: 10px;">ADIM 4: Saç ve
+                                                    Aksesuar Farklılaştırma</h4>
+                                                <p>Son dokunuşta bebeklerin ruhunu yansıtıyoruz. Birine örgü saç ve
+                                                    kurdele, diğerine topuz veya açık saç yaparak karakter tasarımını
+                                                    tamamlıyoruz.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 5 (Final) -->
+                                        <div class="step-item"
+                                            style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+                                            <div class="step-img" style="max-width: 500px;">
+                                                <img src="assets/workshop_3_doll_two_dresses.png"
+                                                    style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
+                                                    alt="Final İkili">
+                                            </div>
+                                            <div class="step-content" style="max-width: 600px;">
+                                                <h4
+                                                    style="color: var(--primary); margin-bottom: 10px; font-size: 1.5rem;">
+                                                    ÇİFTE BAŞARI!</h4>
+                                                <p>Tek bir taban tarifinden yola çıkarak, modifikasyon teknikleri
+                                                    sayesinde iki özgün eser ortaya çıkardınız. Artık kendi
+                                                    tasarımlarınızı yapmaya hazırsınız!</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="benefits-card" style="max-width: 800px; margin: 0 auto;">
+                                        <h4 style="margin-bottom: 10px;">Kazanımlar</h4>
+                                        <ul class="benefits-list" style="list-style: none;">
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Tarif karşılaştırma
+                                                becerisi</li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Modifikasyon mantığı</li>
+                                            <li><ion-icon name="checkmark-circle"></ion-icon> Tasarım düşüncesine geçiş
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="info-box"
+                style="margin-top: 50px; background: #FFF3E0; border-left-color: #FF9800; text-align: center;">
+                <p><strong>📄 Tüm workshoplar yazılı tarif üzerinden yürütülür.</strong></p>
+                <p><strong>🧠 Tarif okuma becerisi uygulama ile geliştirilir.</strong></p>
+                <p><strong>🎓 Workshop sonunda katılımcılar ileri seviye eğitime hazır hale gelir.</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <a href="https://elisleme.com/" class="footer-brand-btn">
+                <ion-icon name="arrow-back-outline"></ion-icon> Elişleme Resmi Siteye Git
+            </a>
+            <div class="footer-copy">
+                &copy; 2026 Amigurumi Tasarım Eğitimi. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const content = element.nextElementSibling;
+
+            // Toggle active class
+            item.classList.toggle('active');
+
+            // Optional: Close others when one opens (Accordion effect vs Expansion Panel)
+            /*
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            */
+        }
+    </script>
+</body>
+
+</html>

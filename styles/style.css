@@ -95,7 +95,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     background: rgba(250, 250, 250, 0.85);
     backdrop-filter: blur(10px);
 }
@@ -117,6 +117,10 @@ nav {
     height: 75px;
     width: auto;
     display: block;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .nav-links {
@@ -434,6 +438,49 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Term Cards (Terimler Page) */
+.term-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.term-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.term-image {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.term-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.term-card:hover .term-image img {
+    transform: scale(1.05);
+}
+
+.term-content {
+    padding: 25px;
+}
+
+.term-title {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
 /* CTA Section */
 .cta-section {
     padding: 60px 0;
@@ -486,18 +533,35 @@ footer {
     display: inline-block;
 }
 
+/* Hamburger Menu Icon */
+/* Hamburger Menu Icon */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
 
     /* Navigation */
+    /* Navigation */
     .menu-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
         z-index: 3000;
         position: absolute;
         right: 20px;
         top: 25px;
         width: 30px;
         height: 30px;
+        cursor: pointer;
     }
 
     .nav-links {
@@ -547,7 +611,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.2rem;
     }
 
     /* Page Hero Mobile */
@@ -555,8 +619,21 @@ footer {
         height: 300px;
     }
 
+    .level-tag {
+        font-size: 1.2rem;
+    }
+
     .page-hero h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .page-hero p {
+        font-size: 1.2rem !important;
+    }
+
+    .page-hero-content {
+        padding: 140px 20px 40px !important;
+        /* Increased top padding to avoid header overlap */
     }
 
     /* Footer Mobile */

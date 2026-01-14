@@ -238,19 +238,19 @@
                 padding: 25px;
             }
 
-            .form-section {
-                padding: 25px;
-            }
-
             .info-grid {
                 grid-template-columns: 1fr !important;
-                gap: 20px !important;
+                gap: 0 !important;
+                /* Remove gap if image touches edges */
             }
 
             .video-col {
-                min-height: 200px;
-                order: -1;
-                /* Show video on top on mobile if desired, or remove to keep below */
+                height: 300px;
+                /* Fixed height is required for child % height to work */
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+                /* Add some spacing from text */
             }
         }
 
@@ -359,22 +359,22 @@
                     <div class="grid">
                         <div class="form-group">
                             <label class="form-label">Adınız</label>
-                            <input type="text" class="form-input" placeholder="Örn: Ayşe" required>
+                            <input type="text" name="ad" class="form-input" placeholder="Örn: Ayşe" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Soyadınız</label>
-                            <input type="text" class="form-input" placeholder="Örn: Yılmaz" required>
+                            <input type="text" name="soyad" class="form-input" placeholder="Örn: Yılmaz" required>
                         </div>
                     </div>
 
                     <div class="grid">
                         <div class="form-group">
                             <label class="form-label">Telefon Numarası</label>
-                            <input type="tel" class="form-input" placeholder="0555 123 45 67" required>
+                            <input type="tel" name="telefon" class="form-input" placeholder="0555 123 45 67" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">E-posta Adresi</label>
-                            <input type="email" class="form-input" placeholder="ornek@email.com" required>
+                            <input type="email" name="email" class="form-input" placeholder="ornek@email.com" required>
                         </div>
                     </div>
 
@@ -609,13 +609,66 @@
             }
         }
 
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
+
+            // 1. Validation
             if (selections.size === 0) {
                 alert('Lütfen en az bir müsait saat aralığı seçiniz.');
                 return;
             }
-            alert('Başvurunuz alındı! Seçtiğiniz ' + selections.size + ' saat aralığı kaydedildi.');
+
+            // 2. Button Loading State
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Gönderiliyor...';
+            btn.disabled = true;
+
+            // 3. Prepare Data
+            const formData = new FormData(e.target);
+            const data = {
+                ad: formData.get('ad'),
+                soyad: formData.get('soyad'),
+                telefon: formData.get('telefon'),
+                email: formData.get('email'),
+                course: formData.get('course'),
+                location: formData.get('location'),
+                availability: Array.from(selections).sort().join(', '),
+                submittedAt: new Date().toLocaleString('tr-TR')
+            };
+
+            // 4. Send to Google Apps Script
+            // IMPORTANT: User must replace this URL with their own deployment URL
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJeVOd5R2lpl8g3S4K-K_YNn0D9WJf_9Xo2r-8CZImRZR0Zsyh92dzQRrWrBNOS9vnxA/exec';
+
+            try {
+                if (SCRIPT_URL === 'BURAYA_GOOGLE_APPS_SCRIPT_URL_GELECEK') {
+                    // Simulation for testing/demo before real URL is set
+                    console.log("Simulating submission:", data);
+                    await new Promise(r => setTimeout(r, 1500));
+                    alert('Demo Başarılı! (Gerçek kayıt için Google Script URL\'sini eklemelisiniz).\n\nVeriler:\n' + JSON.stringify(data, null, 2));
+                } else {
+                    await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // Important for Google Apps Script
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    alert('Başvurunuz başarıyla alındı! En kısa sürede sizinle iletişime geçeceğiz.');
+                    e.target.reset();
+                    selections.clear();
+                    updateUI();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.');
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
         }
 
         window.onload = function () {

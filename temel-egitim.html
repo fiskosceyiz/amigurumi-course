@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitim Müfredatı - Amigurumi Tasarım Eğitimi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab-btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            color: var(--text-light);
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(255, 139, 167, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Elisleme Akademi">
+                </div>
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="temel-egitim.html" class="active">Temel Eğitim</a></li>
+                    <li><a href="malzemeler.html">Malzemeler</a></li>
+                    <li><a href="terimler.html">Terimler</a></li>
+                    <li><a href="basvuru.html">Başvuru</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="page-hero">
+        <img src="assets/hero.jpg" class="page-hero-bg" alt="Eğitim Müfredatı">
+        <div class="page-hero-content">
+            <span class="level-tag">MÜFREDAT</span>
+            <h1>Amigurumi Tasarım Eğitimi</h1>
+            <p style="margin: 0 auto; max-width: 600px; font-size: 1.2rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+                Başlangıçtan ileri seviyeye kadar tüm tasarım süreçlerini kapsayan kapsamlı bir yolculuk.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="openTab(event, 'beginner')">Başlangıç</button>
+                <button class="tab-btn" onclick="openTab(event, 'intermediate')">Orta</button>
+                <button class="tab-btn" onclick="openTab(event, 'advanced')">İleri</button>
+            </div>
+
+            <!-- BEGINNER TAB -->
+            <div id="beginner" class="tab-content active">
+                <div
+                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                    <img src="assets/beginner.jpg" alt="Başlangıç Seviyesi"
+                        style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px;">
+                    <!-- Sidebar Info -->
+                    <div class="course-sidebar">
+                        <div class="glass-card" style="padding: 25px;">
+                            <h4>Hedef Kitle</h4>
+                            <ul class="level-list" style="margin-top: 15px;">
+                                <li>Amigurumiye hiç başlamamış olanlar</li>
+                                <li>Sadece tariften örebilenler</li>
+                                <li>Temel teknik bilgisi eksik olanlar</li>
+                            </ul>
+
+                            <h4 style="margin-top: 30px;">Eğitim Hedefi</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 10px;">
+                                Tığ tutuşundan, ipleri tanımaya, temel amigurumi formlarını (top, silindir vb.)
+                                mantığıyla öğrenmeye giriş.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum Content -->
+                    <div class="course-content">
+                        <h2 style="margin-bottom: 30px;">Müfredat İçeriği</h2>
+
+                        <!-- 1. Temel Malzemeler -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>1. Temel Malzemeler ve Teknikler</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Amigurumi tasarımının temeli, doğru malzeme seçimi
+                                        ve temel tekniklerin anlaşılmasıyla atılır. Bu bölümde öğrenciler:</p>
+                                    <ul class="level-list">
+                                        <li>Amigurumi için uygun tığ seçimini</li>
+                                        <li>Farklı iplik türlerinin (pamuk, akrilik, karışım) amigurumi üzerindeki
+                                            etkilerini</li>
+                                        <li>İlmek sayısını takip etmek için ilmek belirleyici kullanımını</li>
+                                        <li>Amigurumiye özgü temel teknikleri öğrenir.</li>
+                                    </ul>
+                                    <p style="margin-top: 15px;"><strong>Özellikle:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Sihirli halka (magic ring) ile sıkı başlangıç yapma,</li>
+                                        <li>Sık iğne (single crochet) ile düzgün yüzey elde etme,</li>
+                                        <li>Artırma ve eksiltme mantığı ile form oluşturma konularına odaklanılır.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; font-style: italic; color: var(--primary);">Amaç,
+                                        öğrencinin “nasıl yapılır”dan önce “neden böyle yapılır” sorusunu
+                                        anlayabilmesidir.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/training_beginner_materials.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Temel Malzemeler">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Amigurumi Matematiği -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>2. Amigurumi Matematiği</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/training_beginner_math.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Amigurumi Matematiği">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Amigurumi, görünenden çok daha fazla matematiksel
+                                        bir mantığa dayanır. Bu bölümde öğrenciler, yuvarlak ve düzgün formların nasıl
+                                        oluştuğunu öğrenir.</p>
+                                    <p><strong>Ana odak noktası 6’lı sistemin mantığıdır:</strong></p>
+                                    <ul class="level-list" style="margin-top: 10px;">
+                                        <li>1. tur: 6 sık iğne</li>
+                                        <li>2. tur: 12 ilmek (6×2)</li>
+                                        <li>3. tur: 18 ilmek (6×3)</li>
+                                    </ul>
+                                    <p style="margin-top: 15px;">Bu sistem sayesinde düzgün bir daire elde edilir,
+                                        dalgalanma veya büzülme önlenir.</p>
+                                    <p style="margin-top: 10px; color: var(--text-light);">Öğrenci, artık sadece
+                                        sayıları takip etmez; bir formun neden bozulduğunu veya düzgün olduğunu
+                                        matematiksel olarak analiz edebilir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Temel Formlar -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>3. Temel Formlar</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Amigurumi tasarımında tüm karakterler, temel
+                                        geometrik formların birleşiminden oluşur. Bu bölümde öğrenciler üç ana formu
+                                        öğrenir:</p>
+                                    <ul class="level-list">
+                                        <li><strong>Küre:</strong> Kafa ve yuvarlak gövdeler</li>
+                                        <li><strong>Silindir:</strong> Kol ve bacaklar</li>
+                                        <li><strong>Koni:</strong> Şapka, burun ve sivri detaylar</li>
+                                    </ul>
+                                    <p style="margin-top: 15px;">Her form ayrı ayrı örülür; artırma, sabit örme ve
+                                        eksiltme bölgeleri analiz edilir. Hangi formun hangi parça için uygun olduğu
+                                        öğretilir.</p>
+                                    <p style="margin-top: 10px; font-style: italic;">“Bu kafa neden böyle duruyor?” veya
+                                        “Bacak neden kalın oldu?” gibi soruların cevabını form mantığıyla öğrenir.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/training_beginner_shapes.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Temel Formlar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Tasarım Kartları -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>4. Tasarım Kartları – Giriş</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/training_beginner_cards.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Tasarım Kartları">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Tasarım kartları, amigurumi tasarım sürecini
+                                        okunabilir ve sistematik hale getiren araçlardır. Bu bölümde öğrenciler Shape
+                                        (Şekil) Kartları ile tanışır ve bir kartın ne anlattığını öğrenir.</p>
+                                    <p><strong>Tasarım kartları:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Sözel anlatımı azaltır</li>
+                                        <li>Görsel ve mantıksal düşünmeyi destekler</li>
+                                        <li>Öğrencinin tariflere bağımlılığını azaltır</li>
+                                    </ul>
+                                    <div class="highlight-box"
+                                        style="margin-top: 20px; background: #f1f8e9; border-left: 4px solid #8bc34a; padding: 15px;">
+                                        Bu aşama, öğrenciyi “tarif takip eden” bir seviyeden <strong>“mantık
+                                            okuyan”</strong> bir seviyeye taşır.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="background: #e3f2fd; border-color: #90e0ef;">
+                            <h3 style="color: var(--text-dark);">Kazanımlar</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Temel örgü teknikleri</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Form mantığı</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Ezbersiz örme</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERMEDIATE TAB -->
+            <div id="intermediate" class="tab-content">
+                <div
+                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                    <img src="assets/intermediate.jpg" alt="Orta Seviye"
+                        style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px;">
+                    <!-- Sidebar Info -->
+                    <div class="course-sidebar">
+                        <div class="glass-card" style="padding: 25px;">
+                            <h4>Hedef Kitle</h4>
+                            <ul class="level-list" style="margin-top: 15px;">
+                                <li>Temel formları örebilenler</li>
+                                <li>Tarif okumayı bilenler</li>
+                                <li>Kendi küçük değişikliklerini yapmak isteyenler</li>
+                            </ul>
+
+                            <h4 style="margin-top: 30px;">Eğitim Hedefi</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 10px;">
+                                Parçaları birleştirme, oran-orantı kurma ve karakter oluşturma. Mevcut bir görselden
+                                yola çıkarak form çıkarma.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum Content -->
+                    <div class="course-content">
+                        <h2 style="margin-bottom: 30px;">Müfredat İçeriği</h2>
+
+                        <!-- 1. Parça Birleştirme ve Dikim -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>1. Parça Birleştirme ve Dikim</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Amigurumi tasarımında birleştirme ve dikim,
+                                        yalnızca teknik bir aşama değil; karakterin duruşunu, dengesini ve
+                                        profesyonel görünümünü belirleyen temel bir unsurdur.</p>
+                                    <ul class="level-list">
+                                        <li>Gizli dikiş tekniklerini öğrenir</li>
+                                        <li>Parçaların dışarıdan dikiş izi bırakmadan nasıl birleştirileceğini
+                                            uygular</li>
+                                        <li>Kol ve bacakların simetrik ve dengeli yerleştirilmesini öğrenir</li>
+                                    </ul>
+                                    <p style="margin-top: 15px;"><strong>Ayrıca:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Karakterin ayakta durması veya oturması için denge noktaları</li>
+                                        <li>Uzuvların açıyla dikilmesi</li>
+                                        <li>Hareketli eklem (button joint) mantığı ve uygulaması öğretilir.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; font-style: italic; color: var(--primary);">Bu
+                                        aşamada öğrenci, yalnızca parçaları birleştirmez; karakterin beden dilini
+                                        inşa etmeyi öğrenir.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/orta-1.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Parça Birleştirme">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Karakter İfadesi -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>2. Karakter İfadesi</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/orta-2.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Karakter İfadesi">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Bir amigurumi karakteri “canlı” yapan şey,
+                                        ifadesidir. Bu bölüm, teknikten çok duyguyu şekillendirme üzerine kuruludur.
+                                    </p>
+                                    <p><strong>Öğrenciler bu derste:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Göz yerleşiminin karakter ifadesini nasıl değiştirdiğini</li>
+                                        <li>Göz işleme ve güvenli göz kullanımı farklarını</li>
+                                        <li>Yüz şekillendirme (çektirme) tekniklerini</li>
+                                    </ul>
+                                    <p style="margin-top: 15px;">Ağız ve burun konumunun Mutlu, Uykulu, Meraklı,
+                                        Ciddi gibi ifadeleri nasıl oluşturduğunu öğrenir.</p>
+                                    <p style="margin-top: 10px; color: var(--text-light);">Aynı yüz formunun,
+                                        yalnızca birkaç milimlik farkla tamamen farklı bir karaktere dönüşebildiği
+                                        uygulamalı olarak gösterilir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Tasarım Kartları -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>3. Tasarım Kartları – Orta Seviye</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Bu aşamada tasarım kartları, yalnızca şekli
+                                        değil; oranı ve görsel dengeyi de kontrol eden araçlara dönüşür. Bu bölümde
+                                        öğrenciler Oran (Proportion) Kartları ve Renk (Palette) Kartları ile
+                                        çalışır.</p>
+                                    <p><strong>Örneğin:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Büyük kafa + küçük gövde → daha sevimli stil</li>
+                                        <li>Dengeli oran → daha gerçekçi stil</li>
+                                    </ul>
+                                    <div class="highlight-box"
+                                        style="margin-top: 20px; background: #f1f8e9; border-left: 4px solid #8bc34a; padding: 15px;">
+                                        Öğrenci artık yalnızca “örüyorum” değil, <strong>bilinçli tasarım kararları
+                                            veriyorum</strong> noktasına geçer.
+                                    </div>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/orta-3.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Tasarım Kartları">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Modifikasyon -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>4. Modifikasyon</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/orta-4.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Modifikasyon">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Modifikasyon, öğrencinin tarif bağımlılığından
+                                        kurtulduğu kritik aşamadır. Bu bölümde öğrenciler var olan bir amigurumi
+                                        tarifini analiz eder.</p>
+                                    <ul class="level-list">
+                                        <li>Aynı tarifi daha büyük veya daha küçük hale getirmeyi</li>
+                                        <li>Karaktere kıyafet, aksesuar, ek parça eklemeyi</li>
+                                        <li>Ölçek büyütme/küçültme yapılırken ilmek sayısının, oranların ve formun
+                                            korunmasını öğrenir.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; font-style: italic; color: var(--primary);">Bu ders,
+                                        öğrencinin “Bu tarif böyle ama ben bunu değiştirebilirim” diyebildiği
+                                        noktadır.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="background: #e3f2fd; border-color: #90e0ef;">
+                            <h3 style="color: var(--text-dark);">Kazanımlar</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Oran kurabilme</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Kartları yorumlama</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Yarı özgün tasarım</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADVANCED TAB -->
+            <div id="advanced" class="tab-content">
+                <div
+                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                    <img src="assets/advanced.jpg" alt="İleri Seviye"
+                        style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px;">
+                    <!-- Sidebar Info -->
+                    <div class="course-sidebar">
+                        <div class="glass-card" style="padding: 25px;">
+                            <h4>Hedef Kitle</h4>
+                            <ul class="level-list" style="margin-top: 15px;">
+                                <li>Kendi tasarımını yapmak isteyenler</li>
+                                <li>Profesyonel üretim hedefleyenler</li>
+                                <li>Tarif satışı düşünenler</li>
+                            </ul>
+
+                            <h4 style="margin-top: 30px;">Eğitim Hedefi</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 10px;">
+                                Sıfırdan özgün amigurumi tasarlama, kendi kartlarını oluşturma ve tasarımını yazıya
+                                dökebilme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum Content -->
+                    <div class="course-content">
+                        <h2 style="margin-bottom: 30px;">Müfredat İçeriği</h2>
+
+                        <!-- 1. Tasarım Düşüncesi -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>1. Tasarım Düşüncesi</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">İleri seviyede amigurumi tasarımı, artık
+                                        yalnızca teknik bir süreç değil; bilinçli bir tasarım düşüncesinin ürünüdür.
+                                        Bu bölümde öğrenciler:</p>
+                                    <ul class="level-list">
+                                        <li>İlham ve referans kaynaklarını doğru kullanmayı</li>
+                                        <li>Bir görseli birebir kopyalamadan yorumlamayı</li>
+                                        <li>Eskiz çizimi ile fikri somutlaştırmayı</li>
+                                        <li>İki boyutlu bir fikri, örme süreciyle üç boyutlu forma dönüştürmeyi
+                                            öğrenir.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; font-style: italic; color: var(--primary);">Öğrenci,
+                                        bu aşamada “Ne öreceğim?” değil “Nasıl bir karakter tasarlıyorum?” sorusuna
+                                        odaklanır.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-1.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Tasarım Düşüncesi">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Tasarım Kartları - İleri Seviye -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>2. Tasarım Kartları – İleri Seviye</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-2.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="İleri Seviye Kartlar">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">İleri seviye tasarım kartları, yalnızca uygulama
+                                        değil; düşünceyi yazılı ve görsel dile çeviren araçlardır.</p>
+                                    <ul class="level-list">
+                                        <li>Açıklamalı (Description) Kartlar ile çalışır</li>
+                                        <li>Bir tasarım kararının nedenini yazıya döker</li>
+                                        <li>Aynı tasarımı Kısa, Uzun ve Açıklamalı kart formatlarına dönüştürmeyi
+                                            öğrenir.</li>
+                                    </ul>
+                                    <div class="highlight-box"
+                                        style="margin-top: 20px; background: #f1f8e9; border-left: 4px solid #8bc34a; padding: 15px;">
+                                        Bu süreç, öğrenciyi tasarım yapan kişiden <strong>tasarımını aktarabilen
+                                            kişiye</strong> dönüştürür.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Kompleks Formlar -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>3. Kompleks Formlar</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Bu bölüm, ileri seviye tasarımın en yoğun teknik
+                                        kısmıdır. Öğrenciler standart formların dışına çıkar.</p>
+                                    <ul class="level-list">
+                                        <li>Asimetrik tasarımlar</li>
+                                        <li>Çok parçalı ve katmanlı yapılar</li>
+                                        <li>Amigurumiye entegre giysi, aksesuar ve saç</li>
+                                        <li>Parça–bütün ilişkisi</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; color: var(--text-light);">Bu aşamada öğrenci “Bu
+                                        parça neden ayrı örülmeli?” veya “Bu form tek parça olabilir mi?” gibi
+                                        sorulara teknik ve estetik cevaplar üretir.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-3.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Kompleks Formlar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Teknik Detaylar -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>4. Teknik Detaylar</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-4.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Teknik Detaylar">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">İleri seviye amigurumi tasarımında detaylar,
+                                        kaliteyi belirler. Bu bölümde öğrenciler:</p>
+                                    <ul class="level-list">
+                                        <li>Dikişsiz (seamless) tasarım tekniklerini</li>
+                                        <li>Renk geçişlerinin düzgün yapılmasını</li>
+                                        <li>Görsel akışın bozulmamasını</li>
+                                        <li>Karakterin ayakta durması veya dengede kalması için stabilite ve ağırlık
+                                            merkezini öğrenir.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Bu aşama,
+                                        tasarımı amatör bir işten profesyonel bir ürüne dönüştürür.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Tarif Yazımı -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>5. Tarif Yazımı</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">İleri seviye eğitim, tasarımı paylaşılabilir ve
+                                        satılabilir hale getirmeyi hedefler. Bu bölümde öğrenciler:</p>
+                                    <ul class="level-list">
+                                        <li>Profesyonel tarif dili kullanmayı</li>
+                                        <li>Uluslararası amigurumi kısaltmalarını doğru bağlamda kullanmayı</li>
+                                        <li>Okunabilir, hatasız ve tutarlı tarif yazmayı öğrenir.</li>
+                                    </ul>
+                                    <p style="margin-top: 10px;">Ayrıca tarifin test edilmesi, hata paylarının
+                                        azaltılması ve satışa uygun tarif formatı ele alınır.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-5.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Tarif Yazımı">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Bitirme Projesi -->
+                        <div class="curriculum-item" style="margin-bottom: 50px;">
+                            <h3>6. Bitirme Projesi</h3>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <img src="assets/ileri-seviye-6.jpg"
+                                        style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
+                                        alt="Bitirme Projesi">
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <p style="margin-bottom: 15px;">Eğitimin sonunda öğrenci, tüm bilgi ve
+                                        becerilerini tek bir projede birleştirir.</p>
+                                    <p><strong>Bitirme projesi kapsamında:</strong></p>
+                                    <ul class="level-list">
+                                        <li>Tamamen özgün bir amigurumi tasarımı</li>
+                                        <li>Tasarım kartları, açıklamalı plan ve yazılı tarif</li>
+                                        <li>Projenin sunumu ve değerlendirilmesi gerçekleştirilir.</li>
+                                    </ul>
+                                    <div class="highlight-box"
+                                        style="margin-top: 20px; background: #fbe9e7; border-left: 4px solid #ff5722; padding: 15px;">
+                                        Bu proje, öğrencinin <strong>“Ben artık kendi tasarımlarımı
+                                            üretebiliyorum”</strong> diyebildiği noktadır.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="background: #e3f2fd; border-color: #90e0ef;">
+                            <h3 style="color: var(--text-dark);">Kazanımlar</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Sıfırdan tasarım</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Kendi kart sistemi</span>
+                                <span
+                                    style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">✔
+                                    Profesyonel yazım</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <a href="https://elisleme.com/" class="footer-brand-btn">
+                <ion-icon name="arrow-back-outline"></ion-icon> Elişleme Resmi Siteye Git
+            </a>
+            <div class="footer-copy">
+                &copy; 2026 Amigurumi Tasarım Eğitimi. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtn;
+
+            // Hide all contents
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active from buttons
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+            }
+
+            // Show chosen tab
+            document.getElementById(tabName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(tabName).classList.add("active");
+            }, 10);
+
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>

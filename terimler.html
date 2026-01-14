@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Terimler - Amigurumi Tasarım Eğitimi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .terms-table th,
+        .terms-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .terms-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 700;
+        }
+
+        .terms-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--secondary);
+            margin-top: 20px;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .check-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Elisleme Akademi">
+                </div>
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="temel-egitim.html">Temel Eğitim</a></li>
+                    <li><a href="malzemeler.html">Malzemeler</a></li>
+                    <li><a href="terimler.html" class="active">Terimler</a></li>
+                    <li><a href="basvuru.html">Başvuru</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="page-hero">
+        <img src="assets/terms_hero_wide.jpg" class="page-hero-bg" alt="Teknik Terimler">
+        <div class="page-hero-content">
+            <span class="level-tag">SÖZLÜK</span>
+            <h1>Teknik Terimler ve Tarif Okuma</h1>
+            <p style="margin: 0 auto; max-width: 600px; font-size: 1.2rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+                Tarifleri bir kod değil, bir hikaye gibi okumayı öğrenin.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <!-- Intro -->
+            <div class="content-section">
+                <h2>Amigurumi Teknik Terimler ve Tarif Okuma Eğitimi</h2>
+                <p style="margin-top: 15px; font-size: 1.1rem; line-height: 1.6;">Amigurumi tasarımında ilerlemenin en
+                    önemli adımlarından biri, teknik dili doğru okumak ve anlamaktır. Bu eğitimde amaç, öğrenciyi ezber
+                    bilgiyle doldurmak değil; tarifleri mantığıyla okuyabilen, anlayan ve yorumlayabilen bir seviyeye
+                    taşımaktır.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+                <!-- Left Column -->
+                <div>
+                    <div class="content-section">
+                        <h3>Teknik Terimler (Bilingual – EN / TR)</h3>
+                        <p style="margin-top: 10px;">Amigurumi dünyasında tariflerin büyük çoğunluğu İngilizce
+                            kısaltmalar kullanılarak yazılır. Bu nedenle kurs kapsamında öğrencilere şunlar basılı
+                            materyal (print-out) olarak verilir:</p>
+                        <ul class="level-list" style="margin-top: 15px;">
+                            <li>📄 İngilizce – Türkçe Amigurumi Teknik Terimler Listesi</li>
+                            <li>📄 Uluslararası kısaltmaların karşılıkları</li>
+                            <li>📄 Temel ve ileri seviye terimler</li>
+                        </ul>
+                        <div class="highlight-box"
+                            style="background: #e3f2fd; border-left-color: #2196f3; padding: 20px; margin-top: 20px;">
+                            <p style="font-size: 0.95rem;"><strong>Not:</strong> Bu liste referans amacıyla
+                                hazırlanmıştır. Tüm terimler ders sırasında tek tek ezberletilmez. Amaç, öğrencinin
+                                ihtiyaç duyduğunda doğru terimi kendisi çözümleyebilmesidir.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Bu Kursta Ne Öğretilir?</h3>
+                        <p style="margin-top: 10px;">Bu eğitimde yalnızca “terimlerin ne olduğu” anlatılmaz. Asıl odak
+                            noktası:</p>
+                        <h4 style="color: var(--secondary); margin-top: 10px;">✔ Amigurumi Tariflerini Okuma ve Anlama
+                            Becerisi</h4>
+                        <p style="margin-top: 10px;">Derslerde öğrenciler:</p>
+                        <ul class="level-list" style="margin-top: 10px;">
+                            <li>Amigurumi tariflerinin yapısını öğrenir</li>
+                            <li>Kısaltmaların neden o şekilde yazıldığını kavrar</li>
+                            <li>Satır, tur ve tekrar mantığını çözer</li>
+                            <li>İngilizce bir tarifi Türkçe düşünerek okuyabilmeyi öğrenir</li>
+                            <li>Aynı tarifin kısa ve uzun versiyonlarını karşılaştırır</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-style: italic;">Yani öğrenci: “Bu kısaltma ne demek?”ten ziyade
+                            <strong>“Bu tarif bana ne anlatmak istiyor?”</strong> sorusuna cevap verebilir hale gelir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <div class="content-section">
+                        <h3>Tarif Okuma Eğitimi Nasıl Yapılır?</h3>
+                        <p style="margin-top: 10px;">Seviye bazlı örnek tarifler kullanılır. Aynı modelin:</p>
+                        <ul class="level-list" style="margin-top: 10px;">
+                            <li>Kısa tarif versiyonu</li>
+                            <li>Uzun tarif versiyonu</li>
+                            <li>Açıklamalı anlatımı birlikte incelenir.</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Öğrenci, tarif üzerinden:</p>
+                        <ul class="check-list" style="margin-top: 10px; list-style: none;">
+                            <li>Şeklin nasıl oluştuğunu</li>
+                            <li>Artırma ve eksiltmenin forma etkisini</li>
+                            <li>Parça mantığını öğrenir</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Bu sayede öğrenci yalnızca okuyan değil, <strong>tarifi
+                                yorumlayabilen</strong> bir noktaya ulaşır.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Neden Tüm Bilgiler Yazılı Olarak Verilmiyor?</h3>
+                        <div class="highlight-box" style="border-left: 5px solid #ff9800; background: #fff3e0;">
+                            <p>Çünkü amigurumi tasarımı: <strong>Okuyarak değil, anlayarak ve uygulayarak
+                                    öğrenilir.</strong></p>
+                        </div>
+                        <ul class="level-list" style="margin-top: 20px;">
+                            <li>Teknik terimler → <strong>destekleyici materyal</strong></li>
+                            <li>Tarif okuma → <strong>ders içinde aktif öğretim</strong></li>
+                            <li>Anlama ve yorumlama → <strong>uygulama ile kazanılan beceri</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Term Tables Section -->
+            <div class="content-section">
+                <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 30px;">AMİGURUMİ TEKNİK
+                    TERİMLER LİSTESİ (EN – TR)</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
+
+                    <!-- 1. Basic Stitches -->
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;">Temel İlmekler (Basic
+                            Stitches)</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ch (chain)</td>
+                                    <td>zincir</td>
+                                </tr>
+                                <tr>
+                                    <td>sl st (slip stitch)</td>
+                                    <td>kaydırma ilmeği</td>
+                                </tr>
+                                <tr>
+                                    <td>sc (single crochet)</td>
+                                    <td>sık iğne</td>
+                                </tr>
+                                <tr>
+                                    <td>hdc (half double crochet)</td>
+                                    <td>yarım trabzan</td>
+                                </tr>
+                                <tr>
+                                    <td>dc (double crochet)</td>
+                                    <td>trabzan</td>
+                                </tr>
+                                <tr>
+                                    <td>tr (treble crochet)</td>
+                                    <td>ikili trabzan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 2. Start & Round -->
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;">Başlangıç & Tur
+                            Terimleri</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MR / MC (magic ring)</td>
+                                    <td>sihirli halka</td>
+                                </tr>
+                                <tr>
+                                    <td>rnd / round</td>
+                                    <td>tur</td>
+                                </tr>
+                                <tr>
+                                    <td>row</td>
+                                    <td>sıra</td>
+                                </tr>
+                                <tr>
+                                    <td>spiral</td>
+                                    <td>spiral örgü</td>
+                                </tr>
+                                <tr>
+                                    <td>join</td>
+                                    <td>birleştirme</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 3. Inc / Dec -->
+                    <div>
+                        <h4 style="color: var(--primary);">Artırma – Eksiltme</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inc (increase)</td>
+                                    <td>artırma</td>
+                                </tr>
+                                <tr>
+                                    <td>dec (decrease)</td>
+                                    <td>eksiltme</td>
+                                </tr>
+                                <tr>
+                                    <td>inv dec</td>
+                                    <td>görünmez eksiltme</td>
+                                </tr>
+                                <tr>
+                                    <td>2 sc in next st</td>
+                                    <td>aynı ilmeğe 2 sık iğne</td>
+                                </tr>
+                                <tr>
+                                    <td>sc2tog</td>
+                                    <td>iki ilmeği birlikte örme</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 4. Repeat & Count -->
+                    <div>
+                        <h4 style="color: var(--primary);">Tekrar & Sayım Terimleri</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>st (stitch)</td>
+                                    <td>ilmek</td>
+                                </tr>
+                                <tr>
+                                    <td>sts</td>
+                                    <td>ilmek sayısı</td>
+                                </tr>
+                                <tr>
+                                    <td>rep</td>
+                                    <td>tekrar</td>
+                                </tr>
+                                <tr>
+                                    <td>*...*</td>
+                                    <td>yıldızlar arasını tekrar et</td>
+                                </tr>
+                                <tr>
+                                    <td>( ) / [ ]</td>
+                                    <td>parantez içini tekrar et</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 5. Loops -->
+                    <div>
+                        <h4 style="color: var(--primary);">Ön – Arka İlmek Kullanımı</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FLO (front loop only)</td>
+                                    <td>ön ilmekten ör</td>
+                                </tr>
+                                <tr>
+                                    <td>BLO (back loop only)</td>
+                                    <td>arka ilmekten ör</td>
+                                </tr>
+                                <tr>
+                                    <td>both loops</td>
+                                    <td>iki ilmekten ör</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 6. Shape -->
+                    <div>
+                        <h4 style="color: var(--primary);">Şekil & Yapı Terimleri</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>body / head</td>
+                                    <td>gövde / kafa</td>
+                                </tr>
+                                <tr>
+                                    <td>arm / leg</td>
+                                    <td>kol / bacak</td>
+                                </tr>
+                                <tr>
+                                    <td>tail / ear</td>
+                                    <td>kuyruk / kulak</td>
+                                </tr>
+                                <tr>
+                                    <td>muzzle</td>
+                                    <td>burun / ağız çıkıntısı</td>
+                                </tr>
+                                <tr>
+                                    <td>shaping</td>
+                                    <td>şekillendirme</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 7. Finish -->
+                    <div>
+                        <h4 style="color: var(--primary);">Birleştirme & Bitirme</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fasten off</td>
+                                    <td>ipi kes / bitir</td>
+                                </tr>
+                                <tr>
+                                    <td>finish off</td>
+                                    <td>bitir</td>
+                                </tr>
+                                <tr>
+                                    <td>sew / sew on</td>
+                                    <td>dik</td>
+                                </tr>
+                                <tr>
+                                    <td>assemble</td>
+                                    <td>birleştir</td>
+                                </tr>
+                                <tr>
+                                    <td>weave in ends</td>
+                                    <td>ip uçlarını gizle</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 8. Materials -->
+                    <div>
+                        <h4 style="color: var(--primary);">Malzeme & Ölçü Terimleri</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>yarn / hook</td>
+                                    <td>iplik / tığ</td>
+                                </tr>
+                                <tr>
+                                    <td>stuffing</td>
+                                    <td>dolgu</td>
+                                </tr>
+                                <tr>
+                                    <td>gauge</td>
+                                    <td>ilmek sıklığı</td>
+                                </tr>
+                                <tr>
+                                    <td>tension</td>
+                                    <td>el ayarı</td>
+                                </tr>
+                                <tr>
+                                    <td>marker</td>
+                                    <td>ilmek belirleyici</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 9. Design Language -->
+                    <div>
+                        <h4 style="color: var(--primary);">Tasarım & Tarif Dili</h4>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>English</th>
+                                    <th>Türkçe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pattern</td>
+                                    <td>tarif</td>
+                                </tr>
+                                <tr>
+                                    <td>written pattern</td>
+                                    <td>yazılı tarif</td>
+                                </tr>
+                                <tr>
+                                    <td>chart</td>
+                                    <td>şema</td>
+                                </tr>
+                                <tr>
+                                    <td>skill level</td>
+                                    <td>zorluk seviyesi</td>
+                                </tr>
+                                <tr>
+                                    <td>instructions</td>
+                                    <td>yönergeler</td>
+                                </tr>
+                                <tr>
+                                    <td>notes</td>
+                                    <td>notlar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px; background: #fffde7; border-left-color: #fbc02d;">
+                    <h4 style="color: #f57f17;">Kurs Notu</h4>
+                    <p style="margin-top: 10px;">Bu terim listesi, amigurumi tariflerini okurken referans olarak
+                        kullanılması amacıyla verilmiştir. Terimlerin nasıl ve neden kullanıldığı, tarif okuma ve
+                        yorumlama becerisi derslerde uygulamalı olarak öğretilir.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <a href="https://elisleme.com/" class="footer-brand-btn">
+                <ion-icon name="arrow-back-outline"></ion-icon> Elişleme Resmi Siteye Git
+            </a>
+            <div class="footer-copy">
+                &copy; 2026 Amigurumi Tasarım Eğitimi. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

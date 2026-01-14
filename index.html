@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigurumi Tasarım Eğitimi - Kendi Oyucağını Tasarla</title>
+    <meta name="description"
+        content="Başlangıçtan ileri seviyeye kadar amigurumi tasarım eğitimi. Kendi tariflerinizi yazın, tasarım kartları ile oran kurmayı öğrenin.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Elisleme Akademi">
+                </div>
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                    <li><a href="temel-egitim.html">Temel Eğitim</a></li>
+                    <li><a href="malzemeler.html">Malzemeler</a></li>
+                    <li><a href="terimler.html">Terimler</a></li>
+                    <li><a href="basvuru.html">Başvuru</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Redesigned Hero Section (Centered) -->
+    <section class="hero">
+        <div class="circle c1" style="top: 10%; left: 10%;"></div>
+        <div class="circle c2" style="bottom: 10%; right: 10%;"></div>
+
+        <div class="container hero-content-centered">
+            <!-- Animated Badge -->
+            <div
+                style="display: inline-block; background: rgba(255, 139, 167, 0.1); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(255, 139, 167, 0.2);">
+                ✨ Yeni Dönem Kayıtları Başladı
+            </div>
+
+            <h1>
+                Hayalinizdeki Oyuncağı<br>
+                <span style="color: var(--primary);">Gerçeğe Dönüştürün</span>
+            </h1>
+
+            <p>
+                Hazır tariflere bağlı kalmadan, kendi karakterlerinizi tasarlamayı ve amigurumi dünyasının teknik
+                sırlarını keşfedin.
+            </p>
+
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="basvuru.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                    Hemen Başvur <ion-icon name="arrow-forward-outline"
+                        style="vertical-align: middle; margin-left: 5px;"></ion-icon>
+                </a>
+                <a href="temel-egitim.html" class="btn"
+                    style="background: white; color: var(--text-dark); box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 15px 30px; font-size: 1.1rem;">
+                    Eğitimleri İncele
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimal Icon Section (Replacing "Why This Course") -->
+    <section style="background: white; padding: 40px 0; border-bottom: 1px solid #f0f0f0;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center;">
+                <div style="flex: 1; min-width: 200px; padding: 20px;">
+                    <ion-icon name="flask"
+                        style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;"></ion-icon>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Amigurumi Matematiği</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">
+                        Tariflerin arkasındaki matematiksel mantığı kavrayın. Ezbere dayalı üretim yerine, formların
+                        nasıl
+                        oluştuğunu anlayarak özgürleşin.
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 200px; padding: 20px;">
+                    <ion-icon name="create"
+                        style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></ion-icon>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Karakter Tasarımı</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">
+                        Sadece örmeyi değil, yaratmayı öğrenin. Zihninizdeki hayali karakteri, oran-orantı kurallarıyla
+                        üç boyutlu bir gerçeğe dönüştürün.
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 200px; padding: 20px;">
+                    <ion-icon name="trending-up"
+                        style="font-size: 2.5rem; color: var(--accent); margin-bottom: 15px;"></ion-icon>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Profesyonel Gelir</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">
+                        Hobinizi mesleğe çevirin. Kendi tariflerinizi yazmayı, test etmeyi ve uluslararası platformlarda
+                        sunmayı öğrenin.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simplified Course Levels -->
+    <section id="levels" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Eğitim Programları</h2>
+                <p>Seviyenize uygun eğitimi seçin ve hemen başlayın.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Beginner -->
+                <div class="compact-level-card">
+                    <img src="assets/beginner.jpg" alt="Başlangıç" class="compact-image">
+                    <div class="compact-body">
+                        <span class="compact-tag">Başlangıç Seviyesi</span>
+                        <h3>Temel Formlar & Analiz</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
+                            Sık iğneden fazlası. Geometrik formların mantığını ve amiguruminin alfabesini öğrenerek
+                            sağlam bir temel atın.
+                        </p>
+                        <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'beginner')"
+                            class="btn-text">
+                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="compact-level-card">
+                    <img src="assets/intermediate.jpg" alt="Orta" class="compact-image">
+                    <div class="compact-body">
+                        <span class="compact-tag">Orta Seviye</span>
+                        <h3>İfade & Modifikasyon</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
+                            Oyuncaklara ruh üfleyin. Yüz şekillendirme, ifade verme ve vücut oranları ile
+                            karakterlerinizi canlandırın.
+                        </p>
+                        <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'intermediate')"
+                            class="btn-text">
+                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="compact-level-card">
+                    <img src="assets/advanced.jpg" alt="İleri" class="compact-image">
+                    <div class="compact-body">
+                        <span class="compact-tag">İleri Seviye</span>
+                        <h3>Özgün Tasarım</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px;">
+                            Sınırları kaldırın. Karmaşık formlar tasarlayın, kendi koleksiyonunuzu oluşturun ve marka
+                            yolculuğunuza başlayın.
+                        </p>
+                        <a href="temel-egitim.html" onclick="localStorage.setItem('activeTab', 'advanced')"
+                            class="btn-text">
+                            Detayları Gör <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="https://elisleme.com/" class="footer-brand-btn">
+                <ion-icon name="arrow-back-outline"></ion-icon> Elişleme Resmi Siteye Git
+            </a>
+            <div class="footer-copy">
+                &copy; 2026 Amigurumi Tasarım Eğitimi. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
